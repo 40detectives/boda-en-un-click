@@ -11,12 +11,10 @@
   --fs-h1: clamp(1.5rem, 1.25rem + 12vw, 25rem);
   --fs-h1-stroke: clamp(1px, 0.7px + 0.5vw, 5px);
 
+  background-color: var(--color-background-1);
+  font-weight: 400;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
-
-  background-color: var(--color-background-1);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,17 +22,17 @@
 }
 
 @font-face {
-  font-family: "arsenica";
-  src: url("assets/fonts/ArsenicaTrial-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-family: arsenica;
+  src: url("assets/fonts/ArsenicaTrial-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "arsenica";
-  src: url("assets/fonts/ArsenicaTrial-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-family: arsenica;
+  src: url("assets/fonts/ArsenicaTrial-Bold.ttf") format("truetype");
 }
 
 body {
@@ -47,38 +45,39 @@ img {
 }
 
 .hero-header {
-  background: url("src/assets/backgrounds/bg-flowers-00-NE.png") top right
-      no-repeat,
-    url("src/assets/backgrounds/bg-flowers-00-SW.png") bottom left no-repeat
-      var(--color-background-1);
-  background-size: 90% auto, 90% auto;
-  min-height: 100svh;
   /* display: flex; */
   justify-content: center;
   align-items: center;
+  min-height: 100svh;
+  background:
+    url("src/assets/backgrounds/bg-flowers-00-NE.png") top right
+    no-repeat,
+    url("src/assets/backgrounds/bg-flowers-00-SW.png") bottom left no-repeat
+    var(--color-background-1);
+  background-size: 90% auto, 90% auto;
   color: var(--color-main-1);
 }
 
 .hero-title {
-  line-height: 1.1;
-  font-size: var(--fs-h1);
-  font-family: arsenica;
-  font-weight: normal;
-  font-kerning: auto;
-  -webkit-text-stroke: var(--fs-h1-stroke);
   margin: 0;
   padding-block: calc(var(--fs-h1) / 5);
+  font-weight: normal;
+  font-size: var(--fs-h1);
+  font-family: arsenica, cursive;
+  line-height: 1.1;
+  text-align: center;
+  font-kerning: auto;
+  -webkit-text-stroke: var(--fs-h1-stroke);
 }
 
 .heading-block {
   display: block;
-  text-align: center;
 }
 
 .happy-couple-dec {
   position: absolute;
-  left: 5%;
   top: 2%;
+  left: 5%;
   width: clamp(220px, 100px + 15vmax, 65vi);
 }
 
@@ -90,20 +89,20 @@ img {
 
   /* this p styles are placeholder */
   p {
-    margin-block: 0;
     margin-inline: 4ch;
+    margin-block: 0;
     padding-block: 4ch;
     color: var(--color-main-2);
   }
 }
 
-@media only screen and (width >=600px) {
+@media only screen and (width >= 600px) {
   .hero-header {
     background-size: clamp(45vw, 250px + 30vw, 75vw) auto;
   }
 }
 
-@media only screen and (min-aspect-ratio: 1.85) {
+@media only screen and (aspect-ratio >= 1.85) {
   :root {
     --fs-h1: clamp(1.15rem, 1rem + 18vh, 25rem);
     --fs-h1-stroke: clamp(1px, 0.65px + 0.85vh, 6px);

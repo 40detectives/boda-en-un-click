@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "stylelint-config-manzdev",
+    "@stylistic/stylelint-config",
+    "stylelint-config-hudochenkov/order"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true,
+        "ignoreKeywords": ["/A[3|4|5]|(JIS-)?B[4|5]/"]
+      }
+    ],
+    "comment-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["stylelint-commands"],
+        "ignoreComments": ["/^[a-z-]*:.*;$/"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["import", "export", "global"] }
+    ],
+    "property-no-unknown": [
+      true,
+      { "ignoreSelectors": ["/^:import\\(/", "/^:export/"] }
+    ]
+  }
+}
