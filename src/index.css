@@ -80,7 +80,7 @@ img {
   justify-content: center;
   align-items: center;
   min-height: 100svh;
-  background: url("src/assets/backgrounds/bg-flowers-00-NE.png") top right no-repeat;
+  background: url("@/assets/backgrounds/bg-flowers-00-NE.png") top right no-repeat;
   background-size: 90% auto;
   color: var(--color-main-1);
 }

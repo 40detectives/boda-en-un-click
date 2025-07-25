@@ -1,3 +1,6 @@
+import couplePicFlax from "@/assets/decorations/man-and-woman-flax.png";
+import bgFlowersSW from "@/assets/backgrounds/bg-flowers-00-SW.png";
+
 interface Props {
   className?: string;
   children?: React.ReactNode;
@@ -8,12 +11,12 @@ export const Hero: React.FC<Props> = ({ children, className }) => {
     <header className={`hero-header ${className}`}>
       <img
         className="happy-couple-deco"
-        src="src/assets/decorations/man-and-woman-flax.png"
+        src={couplePicFlax}
         alt="pareja feliz"
       />
       <img
         className="hero-flowers-sw-deco"
-        src="src/assets/backgrounds/bg-flowers-00-SW.png"
+        src={bgFlowersSW}
         alt="decoration flowers SW corner"
       />
       <h1 className="hero-title">{children}</h1>
