@@ -40,25 +40,55 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
+.layout-wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(42rem, 100%)
+    1fr;
+}
+
+.layout-wrapper > * {
+  grid-column: 2;
+}
+
+.full-bleed {
+  grid-column: 1 / 4;
+  width: 100dvw; /* dvw fixes weird initial zoom in firefox iOS when reloading in landscape */
+}
+
+.temp-placeholder {
+  /* min-height: 65dvh; */
+  background-color: var(--color-highlight-2);
+
+  /* this p styles are placeholder */
+  p {
+    margin-block: 0;
+    padding-block: 4ch;
+    color: var(--color-main-2);
+  }
+}
+
 .hero-header {
+  position: relative;
   /* display: flex; */
   justify-content: center;
   align-items: center;
   min-height: 100svh;
-  background:
-    url("src/assets/backgrounds/bg-flowers-00-NE.png") top right
-    no-repeat,
-    url("src/assets/backgrounds/bg-flowers-00-SW.png") bottom left no-repeat
-    var(--color-background-1);
-  background-size: 90% auto, 90% auto;
+  background: url("src/assets/backgrounds/bg-flowers-00-NE.png") top right no-repeat;
+  background-size: 90% auto;
   color: var(--color-main-1);
 }
 
 .hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   margin: 0;
   padding-block: calc(var(--fs-h1) / 5);
   font-weight: normal;
@@ -66,6 +96,7 @@ img {
   font-family: arsenica, cursive;
   line-height: 1.1;
   text-align: center;
+  transform: translate(-50%, -50%);
   font-kerning: auto;
   -webkit-text-stroke: var(--fs-h1-stroke);
 }
@@ -74,31 +105,40 @@ img {
   display: block;
 }
 
-.happy-couple-dec {
+.happy-couple-deco {
   position: absolute;
-  top: 2%;
-  left: 5%;
-  width: clamp(220px, 100px + 15vmax, 65vi);
+  bottom: 50%;
+  left: 3%;
+  z-index: -1;
+  width: clamp(150px, 70px + 25vmin, 600px);
+  filter: sepia(0.45);
 }
 
-.full-bleed {
-  width: 100vw;
-  min-height: 65dvh;
-  background-color: var(--color-highlight-1);
-  background-size: cover;
-
-  /* this p styles are placeholder */
-  p {
-    margin-inline: 4ch;
-    margin-block: 0;
-    padding-block: 4ch;
-    color: var(--color-main-2);
-  }
+.hero-flowers-sw-deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* display: none; */
+  width: 90%;
 }
 
 @media only screen and (width >= 600px) {
   .hero-header {
     background-size: clamp(45vw, 250px + 30vw, 75vw) auto;
+  }
+
+  .hero-flowers-sw-deco {
+    width: clamp(45vw, 250px + 30vw, 75vw);
+  }
+}
+
+@media only screen and (height <= 550px) {
+  .hero-header {
+    background-size: clamp(45vmin, 250px + 30vmin, 75vmin) auto;
+  }
+
+  .hero-flowers-sw-deco {
+    width: clamp(45vmin, 250px + 30vmin, 75vmin);
   }
 }
 
@@ -106,5 +146,13 @@ img {
   :root {
     --fs-h1: clamp(1.15rem, 1rem + 18vh, 25rem);
     --fs-h1-stroke: clamp(1px, 0.65px + 0.85vh, 6px);
+  }
+}
+
+@media only screen and (aspect-ratio >= 0.71) {
+  .happy-couple-deco {
+    bottom: -3%;
+    left: 6%;
+    width: clamp(150px, 90px + 30vmin, 600px);
   }
 }
