@@ -1,5 +1,5 @@
-import couplePicFlax from "@/assets/decorations/man-and-woman-flax.png";
-import bgFlowersSW from "@/assets/backgrounds/bg-flowers-00-SW.png";
+import couplePic from "/images/decorations/man-and-woman-flax.png";
+import bgFlowersSW from "/images/backgrounds/bg-flowers-00-SW.png";
 
 interface Props {
   className?: string;
@@ -11,8 +11,8 @@ export const Hero: React.FC<Props> = ({ children, className }) => {
     <header className={`hero-header ${className}`}>
       <img
         className="happy-couple-deco"
-        src={couplePicFlax}
-        alt="pareja feliz"
+        src={couplePic}
+        alt="drawing of a couple"
       />
       <img
         className="hero-flowers-sw-deco"

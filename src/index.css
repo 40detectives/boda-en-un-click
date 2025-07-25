@@ -25,14 +25,14 @@
   font-weight: normal;
   font-style: normal;
   font-family: arsenica;
-  src: url("assets/fonts/ArsenicaTrial-Medium.ttf") format("truetype");
+  src: url("/fonts/ArsenicaTrial-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-weight: bold;
   font-style: normal;
   font-family: arsenica;
-  src: url("assets/fonts/ArsenicaTrial-Bold.ttf") format("truetype");
+  src: url("/fonts/ArsenicaTrial-Bold.ttf") format("truetype");
 }
 
 body {
@@ -80,7 +80,7 @@ img {
   justify-content: center;
   align-items: center;
   min-height: 100svh;
-  background: url("@/assets/backgrounds/bg-flowers-00-NE.png") top right no-repeat;
+  background: url("/images/backgrounds/bg-flowers-00-NE.png") top right no-repeat;
   background-size: 90% auto;
   color: var(--color-main-1);
 }
