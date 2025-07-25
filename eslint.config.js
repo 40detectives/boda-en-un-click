@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import configPrettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+
 import { importX } from "eslint-plugin-import-x";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactPlugin from "eslint-plugin-react";
