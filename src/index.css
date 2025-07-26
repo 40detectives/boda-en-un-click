@@ -24,15 +24,33 @@
 @font-face {
   font-weight: normal;
   font-style: normal;
-  font-family: arsenica;
-  src: url("/fonts/ArsenicaTrial-Medium.ttf") format("truetype");
+  font-family: Arsenica;
+  src: url("/fonts/Arsenica/ArsenicaTrial-Medium.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-weight: bold;
   font-style: normal;
-  font-family: arsenica;
-  src: url("/fonts/ArsenicaTrial-Bold.ttf") format("truetype");
+  font-family: Arsenica;
+  src: url("/fonts/Arsenica/ArsenicaTrial-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: Arapey;
+  src: url("/fonts/Arapey/Arapey-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: italic;
+  font-family: Arapey;
+  src: url("/fonts/Arapey/Arapey-Italic.ttf") format("truetype");
+  font-display: swap;
 }
 
 body {
@@ -93,7 +111,7 @@ img {
   padding-block: calc(var(--fs-h1) / 5);
   font-weight: normal;
   font-size: var(--fs-h1);
-  font-family: arsenica, cursive;
+  font-family: Arsenica, cursive;
   line-height: 1.1;
   text-align: center;
   transform: translate(-50%, -50%);
