@@ -4,21 +4,30 @@
   --color-highlight-1: #ddc98a;
   --color-highlight-2: #68967a;
   --color-main-1: #676f54;
-  --color-main-2: #493c32;
-  --color-main-3: #242424;
+  --color-main-2: #5c6244;
+  --color-main-3: #493c32;
+  --color-main-4: #242424;
 
   /* dynamic font sizes */
   --fs-h1: clamp(1.5rem, 1.25rem + 12vw, 25rem);
   --fs-h1-stroke: clamp(1px, 0.7px + 0.5vw, 5px);
 
+  box-sizing: border-box;
   background-color: var(--color-background-1);
   font-weight: 400;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arapey, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  text-align: center;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 @font-face {
@@ -67,8 +76,34 @@ img {
   display: grid;
   grid-template-columns:
     1fr
-    min(42rem, 100%)
+    min(42rem, 66%)
     1fr;
+}
+
+.layout-wrapper > .col-left {
+  grid-column: 1;
+  padding-inline-start: 3ch;
+}
+
+.layout-wrapper > .col-right {
+  grid-column: 3;
+  padding-inline-end: 3ch;
+}
+
+.span-2-rows {
+  grid-row: span 2;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-self-end {
+  align-self: end;
 }
 
 .layout-wrapper > * {
@@ -76,7 +111,7 @@ img {
 }
 
 .full-bleed {
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   width: 100dvw; /* dvw fixes weird initial zoom in firefox iOS when reloading in landscape */
 }
 
@@ -139,6 +174,51 @@ img {
   /* display: none; */
   width: 90%;
 }
+
+.announcement {
+  padding-block: 1rem;
+  background-color: var(--color-background-2);
+  color: var(--color-main-2);
+  line-height: normal;
+}
+
+.announcement-text-md,
+.announcement-text-lg,
+.announcement-title {
+  margin-block: 0.75rem;
+}
+
+.announcement-text-md {
+  --fs-p: clamp(0.5rem, 0.3rem + 4vw, 1.3rem);
+  /* font-size: 2.5rem; */
+  font-size: var(--fs-p);
+}
+
+.announcement-text-lg {
+  --fs-p: clamp(0.5rem, 0.35rem + 8vw, 2.3rem);
+  /* font-size: 4.3rem; */
+  /* font-size: 5rem; */
+  font-size: var(--fs-p);
+}
+
+.announcement-title {
+  --fs-p: clamp(0.7rem, 0.5rem + 9vw, 3.7rem);
+
+  /* font-size: 5rem; */
+  font-size: var(--fs-p);
+
+  /* font-style: italic; */
+  /* font-size: 6rem; */
+  /* font-weight: 400; */
+  font-synthesis-weight: auto;
+}
+
+/*
+.wine-glasses,
+.wedding-rings {
+  max-width: 161px;
+}
+*/
 
 @media only screen and (width >= 600px) {
   .hero-header {
